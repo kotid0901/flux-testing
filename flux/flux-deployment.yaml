@@ -7,7 +7,7 @@ metadata:
   labels:
     name: flux
   annotations:
-    iam.gke.io/gcp-service-account:  kcsapp-gke-pods-sa@new-project-351807.iam.gserviceaccount.com
+    iam.gke.io/gcp-service-account: kcsapp-gke-pods-sa@new-project-351807.iam.gserviceaccount.com
   name: flux
   namespace: flux
 ---
@@ -107,7 +107,7 @@ spec:
         # There are no ":latest" images for flux. Find the most recent
         # release or image version at https://hub.docker.com/r/fluxcd/flux/tags
         # and replace the tag here.
-        image: docker.io/fluxcd/flux:1.24.3
+        image: docker.io/fluxcd/flux:1.25.1
         imagePullPolicy: IfNotPresent
         resources:
           requests:
@@ -244,7 +244,7 @@ spec:
     spec:
       containers:
       - name: memcached
-        image: memcached:1.6.12
+        image: memcached:1.6.15
         imagePullPolicy: IfNotPresent
         args:
         - -m 512   # Maximum memory to use, in megabytes
